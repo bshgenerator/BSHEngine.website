@@ -8,12 +8,13 @@ import Footer from './components/sections/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white overflow-x-hidden">
       <Navbar />
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
+        className="overflow-x-hidden"
       >
         <Hero />
         <Features />
