@@ -27,7 +27,7 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass border-b border-white/10 shadow-lg'
+          ? 'glass border-b border-gray-200 shadow-lg bg-white/95'
           : 'bg-transparent'
       }`}
     >
@@ -41,8 +41,8 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
           >
             <div className="relative">
-              <Code2 className="w-8 h-8 text-blue-400 group-hover:text-cyan-400 transition-colors" />
-              <div className="absolute inset-0 bg-blue-400/20 blur-xl rounded-full group-hover:bg-cyan-400/30 transition-colors" />
+              <Code2 className="w-8 h-8 text-gray-900 group-hover:text-gray-700 transition-colors" />
+              <div className="absolute inset-0 bg-gray-900/10 blur-xl rounded-full group-hover:bg-gray-700/20 transition-colors" />
             </div>
             <span className="text-xl font-bold text-gradient">BSH Engine</span>
           </motion.a>
@@ -53,15 +53,15 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-white transition-colors font-medium text-sm relative group"
+                className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm relative group"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-900 to-gray-700 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
             <motion.a
               href="#"
-              className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+              className="px-6 py-2.5 bg-gray-900 text-white rounded-lg font-semibold text-sm hover:bg-gray-800 hover:shadow-lg transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -71,7 +71,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-300 hover:text-white transition-colors"
+            className="md:hidden text-gray-600 hover:text-gray-900 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -91,14 +91,14 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-white/10"
+            className="md:hidden glass border-t border-gray-200 bg-white/95"
           >
             <div className="px-4 py-4 space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block text-gray-300 hover:text-white transition-colors font-medium"
+                  className="block text-gray-600 hover:text-gray-900 transition-colors font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -106,7 +106,7 @@ const Navbar = () => {
               ))}
               <motion.a
                 href="#"
-                className="block px-6 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-semibold text-center"
+                className="block px-6 py-2.5 bg-gray-900 text-white rounded-lg font-semibold text-center hover:bg-gray-800"
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >

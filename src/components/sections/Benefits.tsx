@@ -7,25 +7,25 @@ const Benefits = () => {
       icon: Zap,
       title: 'Lightning Fast Setup',
       description: 'Get your backend running in minutes with Docker. No complex configuration needed.',
-      gradient: 'from-yellow-500 to-orange-500',
+      gradient: 'from-gray-700 to-gray-900',
     },
     {
       icon: Code2,
       title: 'Zero Boilerplate',
       description: 'Focus on your business logic, not infrastructure. We handle the rest.',
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: 'from-gray-600 to-gray-800',
     },
     {
       icon: Shield,
       title: 'Enterprise Security',
       description: 'Built-in authentication, RBAC, and audit trails. Production-ready from day one.',
-      gradient: 'from-green-500 to-emerald-500',
+      gradient: 'from-gray-800 to-gray-900',
     },
     {
       icon: TrendingUp,
       title: 'Scalable Architecture',
       description: 'Designed to grow with your needs. Handle millions of requests effortlessly.',
-      gradient: 'from-purple-500 to-pink-500',
+      gradient: 'from-gray-700 to-gray-800',
     },
   ]
 
@@ -56,10 +56,10 @@ const Benefits = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-white">Why Choose </span>
+            <span className="text-gray-900">Why Choose </span>
             <span className="text-gradient">BSH Engine</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Built for developers who want to ship faster, not configure more
           </p>
         </motion.div>
@@ -78,7 +78,7 @@ const Benefits = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group relative glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20"
+                className="group relative glass rounded-2xl p-8 hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:border-gray-300"
               >
                 {/* Gradient Background */}
                 <div
@@ -88,16 +88,16 @@ const Benefits = () => {
                 <div className="relative z-10">
                   {/* Icon */}
                   <div className="mb-6">
-                    <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${benefit.gradient} bg-opacity-20`}>
-                      <Icon className="w-8 h-8 text-white" />
+                    <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${benefit.gradient} bg-opacity-10`}>
+                      <Icon className="w-8 h-8 text-gray-900" />
                     </div>
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gray-700 transition-all">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-400 text-lg leading-relaxed">
+                  <p className="text-gray-600 text-lg leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
@@ -112,9 +112,9 @@ const Benefits = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="glass rounded-2xl p-8 border border-white/10"
+          className="glass rounded-2xl p-8 border border-gray-200"
         >
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Everything You Need
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -140,8 +140,8 @@ const Benefits = () => {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="flex items-center space-x-3"
               >
-                <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-gray-300">{point}</span>
+                <CheckCircle2 className="w-5 h-5 text-gray-700 flex-shrink-0" />
+                <span className="text-gray-700">{point}</span>
               </motion.div>
             ))}
           </div>
