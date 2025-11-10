@@ -1,10 +1,18 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { currentAnnouncement } from '../data/announcement'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [hasAnnouncement, setHasAnnouncement] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const dismissedId = localStorage.getItem('announcement-dismissed-id')
+      return dismissedId !== currentAnnouncement.id
+    }
+    return true
+  })
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +20,27 @@ const Navbar = () => {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const checkAnnouncement = () => {
+      const dismissedId = localStorage.getItem('announcement-dismissed-id')
+      setHasAnnouncement(dismissedId !== currentAnnouncement.id)
+    }
+
+    checkAnnouncement()
+
+    const handleAnnouncementDismissed = () => {
+      setHasAnnouncement(false)
+    }
+
+    window.addEventListener('announcement-dismissed', handleAnnouncementDismissed)
+    window.addEventListener('storage', checkAnnouncement)
+
+    return () => {
+      window.removeEventListener('announcement-dismissed', handleAnnouncementDismissed)
+      window.removeEventListener('storage', checkAnnouncement)
+    }
   }, [])
 
   const navLinks = [
@@ -25,11 +54,10 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed ${hasAnnouncement ? 'top-[40px] md:top-[44px]' : 'top-0'} left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? 'glass border-b border-gray-200 shadow-lg bg-white/95'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -39,10 +67,10 @@ const Navbar = () => {
             className="flex items-center space-x-2"
           >
             <div className="relative">
-              <img 
-                src="/logo.svg" 
-                alt="BSH Engine Logo" 
-                className="w-8 h-8" 
+              <img
+                src="/logo.svg"
+                alt="BSH Engine Logo"
+                className="w-8 h-8"
               />
             </div>
             <span className="text-xl font-bold text-gradient">BSH Engine</span>
