@@ -40,7 +40,7 @@ export const quickStartSteps: QuickStartStep[] = [
     number: '03',
     title: 'Start Building',
     description: 'Access the API at localhost:7071 and begin creating entities',
-    code: 'curl http://localhost:7071/health',
+    code: 'curl http://localhost:7071/',
     icon: ArrowRight,
     gradient: 'from-emerald-500 to-teal-600',
     iconBg: 'from-emerald-50 to-teal-50',
