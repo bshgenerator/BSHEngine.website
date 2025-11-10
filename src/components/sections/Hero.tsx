@@ -185,8 +185,7 @@ const Hero = () => {
             className="relative overflow-visible"
           >
             <motion.div
-              className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-300/60 bg-white w-[150%] lg:w-[180%] max-w-none"
-              whileHover={{ scale: 1.02, y: -5 }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-300/60 bg-white w-[170%] lg:w-[240%] max-w-none"
               transition={{ duration: 0.3 }}
             >
               {/* Screenshot Image */}
