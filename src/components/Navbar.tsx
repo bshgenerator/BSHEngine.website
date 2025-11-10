@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Code2 } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,18 +34,19 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <motion.a
+          <a
             href="#"
-            className="flex items-center space-x-2 group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="flex items-center space-x-2"
           >
             <div className="relative">
-              <Code2 className="w-8 h-8 text-gray-900 group-hover:text-gray-700 transition-colors" />
-              <div className="absolute inset-0 bg-gray-900/10 blur-xl rounded-full group-hover:bg-gray-700/20 transition-colors" />
+              <img 
+                src="/logo.svg" 
+                alt="BSH Engine Logo" 
+                className="w-8 h-8" 
+              />
             </div>
             <span className="text-xl font-bold text-gradient">BSH Engine</span>
-          </motion.a>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

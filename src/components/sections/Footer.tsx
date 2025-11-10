@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Code2, Github, Book, Mail, ExternalLink } from 'lucide-react'
+import { Github, Book, Mail, ExternalLink } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -30,17 +30,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <motion.a
+            <a
               href="#"
-              className="flex items-center space-x-2 mb-4 group"
-              whileHover={{ scale: 1.05 }}
+              className="flex items-center space-x-2 mb-4"
             >
               <div className="relative">
-                <Code2 className="w-8 h-8 text-gray-900 group-hover:text-gray-700 transition-colors" />
-                <div className="absolute inset-0 bg-gray-900/10 blur-xl rounded-full group-hover:bg-gray-700/20 transition-colors" />
+                <img 
+                  src="/logo.svg" 
+                  alt="BSH Engine Logo" 
+                  className="w-8 h-8" 
+                />
               </div>
               <span className="text-xl font-bold text-gradient">BSH Engine</span>
-            </motion.a>
+            </a>
             <p className="text-gray-600 mb-6 max-w-md">
               A powerful backend-as-a-service platform designed for developers who want to build APIs and data models effortlessly.
             </p>
