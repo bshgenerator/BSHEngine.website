@@ -179,7 +179,7 @@ const Features = () => {
                     <a href={item.link} target="_blank">
                     <Badge
                       variant="outline" 
-                      className="px-5 py-2.5 text-sm font-medium border-gray-300 text-gray-700 bg-white/80 hover:bg-white hover:border-gray-400 hover:shadow-md transition-all cursor-default"
+                      className="px-5 py-2.5 text-sm font-medium border-gray-300 text-gray-700 bg-white/80 hover:bg-white hover:border-gray-400 hover:shadow-md transition-all cursor-pointer"
                     >
                       {item.title}
                     </Badge>

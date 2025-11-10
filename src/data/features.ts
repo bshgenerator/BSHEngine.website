@@ -114,24 +114,24 @@ export const features: Feature[] = [
 
 export const comingSoonFeatures: ComingSoonFeature[] = [
   {
-    title: 'Caching',
-    link: vars.bshEngineDocs + '/caching',
-  },
-  {
-    title: 'WebSocket Support',
-    link: vars.bshEngineDocs + '/websocket',
-  },
-  {
-    title: 'Derived Entities',
-    link: vars.bshEngineDocs + '/modeling/deriveds',
-  },
-  {
     title: 'Api Keys',
     link: vars.bshEngineDocs + '/security/api-keys',
   },
   {
     title: 'Triggers',
     link: vars.bshEngineDocs + '/triggers',
+  },
+  {
+    title: 'WebSocket Support',
+    link: vars.bshEngineDocs + '/websocket',
+  },
+  {
+    title: 'Caching',
+    link: vars.bshEngineDocs + '/caching',
+  },
+  {
+    title: 'Derived Entities',
+    link: vars.bshEngineDocs + '/modeling/deriveds',
   },
   {
     title: 'Packaging',
