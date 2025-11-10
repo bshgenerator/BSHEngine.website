@@ -150,7 +150,8 @@ const Hero = () => {
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-5"
             >
               <motion.a
-                href="#quick-start"
+                href="https://docs.bousalih.com/docs/bsh-engine/installation"
+                target="_blank"
                 className="group relative px-8 lg:px-10 py-4 lg:py-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-2xl font-semibold text-base lg:text-lg flex items-center space-x-3 overflow-hidden shadow-2xl shadow-gray-900/30 hover:shadow-gray-900/50 transition-all duration-300 w-full sm:w-auto justify-center"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -162,7 +163,8 @@ const Hero = () => {
               </motion.a>
               
               <motion.a
-                href="#"
+                href="https://docs.bousalih.com"
+                target="_blank"
                 className="group px-8 lg:px-10 py-4 lg:py-5 glass text-gray-900 rounded-2xl font-semibold text-base lg:text-lg flex items-center space-x-3 hover:bg-white hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 border-2 border-gray-300/80 hover:border-gray-400 w-full sm:w-auto justify-center"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}

@@ -101,6 +101,37 @@ const Features = () => {
     },
   ]
 
+  const comingSoonFeatures = [
+    {
+      title: 'Caching',
+      link: 'https://docs.bousalih.com/docs/bsh-engine/caching',
+    },
+    {
+      title: 'WebSocket Support',
+      link: 'https://docs.bousalih.com/docs/bsh-engine/websocket',
+    },
+    {
+      title: 'Derived Entities',
+      link: 'https://docs.bousalih.com/docs/bsh-engine/modeling/deriveds',
+    },
+    {
+      title: 'Api Keys',
+      link: 'https://docs.bousalih.com/docs/bsh-engine/security/api-keys',
+    },
+    {
+      title: 'Triggers',
+      link: 'https://docs.bousalih.com/docs/bsh-engine/triggers',
+    },
+    {
+      title: 'Packaging',
+      link: 'https://docs.bousalih.com/docs/bsh-engine/packaging',
+    },
+    {
+      title: 'BSH Engine SDK',
+      link: 'https://docs.bousalih.com/docs/bsh-engine/sdk',
+    },
+  ]
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -260,7 +291,7 @@ const Features = () => {
             
             <CardContent className="pt-8 pb-8 relative z-10">
               <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-                {['Caching', 'WebSocket Support', 'Derived Entities', 'Multi-database Support'].map((item, idx) => (
+                {comingSoonFeatures.map((item, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -269,12 +300,14 @@ const Features = () => {
                     transition={{ duration: 0.3, delay: 0.1 * idx }}
                     whileHover={{ scale: 1.05 }}
                   >
-                    <Badge 
+                    <a href={item.link} target="_blank">
+                    <Badge
                       variant="outline" 
                       className="px-5 py-2.5 text-sm font-medium border-gray-300 text-gray-700 bg-white/80 hover:bg-white hover:border-gray-400 hover:shadow-md transition-all cursor-default"
                     >
-                      {item}
+                      {item.title}
                     </Badge>
+                    </a>
                   </motion.div>
                 ))}
               </div>

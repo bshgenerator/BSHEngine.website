@@ -17,7 +17,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Features', href: '#features' },
     { name: 'Quick Start', href: '#quick-start' },
-    { name: 'Docs', href: '#', external: true },
+    { name: 'Docs', href: 'https://docs.bousalih.com', external: true },
   ]
 
   return (
@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             className="flex items-center space-x-2"
           >
             <div className="relative">
@@ -54,6 +54,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
+                target={link.external ? '_blank' : '_self'}
                 className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm relative group"
               >
                 {link.name}

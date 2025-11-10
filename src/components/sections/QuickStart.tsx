@@ -10,7 +10,7 @@ const QuickStart = () => {
       number: '01',
       title: 'Pull Docker Image',
       description: 'Get the latest BSH Engine image from Docker Hub',
-      code: 'docker pull bsh-engine:latest',
+      code: 'docker pull bshg/engine:latest',
       icon: Package,
       gradient: 'from-blue-500 to-indigo-600',
       iconBg: 'from-blue-50 to-indigo-50',
@@ -36,9 +36,9 @@ const QuickStart = () => {
   ]
 
   const resources = [
-    { name: 'Documentation', icon: Book, href: '#' },
-    { name: 'GitHub Repository', icon: Github, href: '#' },
-    { name: 'Docker Hub', icon: Package, href: '#' },
+    { name: 'Documentation', icon: Book, href: 'https://docs.bousalih.com' },
+    { name: 'GitHub Repository', icon: Github, href: 'https://github.com/bshgenerator' },
+    { name: 'Docker Hub', icon: Package, href: 'https://hub.docker.com/r/bshg/engine' },
   ]
 
   return (
@@ -224,7 +224,8 @@ const QuickStart = () => {
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
                 <motion.a
-                  href="#"
+                  href="https://docs.bousalih.com/docs/bsh-engine"
+                  target="_blank"
                   className="relative group/btn px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-xl font-semibold text-lg flex items-center space-x-2 overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -236,7 +237,8 @@ const QuickStart = () => {
                 </motion.a>
                 
                 <motion.a
-                  href="#"
+                  href="https://github.com/bshgenerator"
+                  target="_blank"
                   className="relative group/btn px-8 py-4 bg-white/90 backdrop-blur-sm text-gray-900 rounded-xl font-semibold text-lg flex items-center space-x-2 border-2 border-gray-200 hover:border-gray-300 transition-all overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -255,6 +257,7 @@ const QuickStart = () => {
                     <motion.a
                       key={index}
                       href={resource.href}
+                      target="_blank"
                       className="group/resource flex items-center space-x-2 px-5 py-2.5 rounded-lg bg-white/80 backdrop-blur-sm border border-gray-200 hover:border-gray-300 hover:bg-white transition-all text-gray-700 hover:text-gray-900"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}

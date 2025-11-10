@@ -7,20 +7,20 @@ const Footer = () => {
   const links = {
     product: [
       { name: 'Features', href: '#features' },
-      { name: 'Documentation', href: '#' },
-      { name: 'API Reference', href: '#' },
-      { name: 'Changelog', href: '#' },
+      { name: 'Documentation', href: 'https://docs.bousalih.com', external: true },
+      { name: 'API Reference', href: 'https://docs.bousalih.com/docs/bsh-engine/api', external: true },
+      { name: 'Quick Start', href: '#quick-start' },
     ],
     resources: [
-      { name: 'GitHub', href: '#', external: true },
-      { name: 'Docker Hub', href: '#', external: true },
-      { name: 'Postman Collection', href: '#', external: true },
-      { name: 'TypeScript SDK', href: '#', external: true },
+      { name: 'GitHub', href: 'https://github.com/bshgenerator', external: true },
+      { name: 'Docker Hub', href: 'https://hub.docker.com/r/bshg/engine', external: true },
+      { name: 'Postman Collection', href: 'https://www.postman.com/bsh-engine', external: true },
+      { name: 'TypeScript SDK', href: 'https://docs.bousalih.com/docs/bsh-engine/sdk', external: true },
     ],
     company: [
-      { name: 'About', href: '#' },
-      { name: 'Blog', href: '#' },
-      { name: 'Contact', href: '#' },
+      { name: 'About', href: '#', external: false },
+      { name: 'Blog', href: '#', external: false },
+      { name: 'Contact', href: 'mailto:bousalih.hamza.bsh@gmail.com', external: false },
     ],
   }
 
@@ -44,11 +44,13 @@ const Footer = () => {
               <span className="text-xl font-bold text-gradient">BSH Engine</span>
             </a>
             <p className="text-gray-600 mb-6 max-w-md">
-              A powerful backend-as-a-service platform designed for developers who want to build APIs and data models effortlessly.
+              A powerful backend platform designed for developers who want to build APIs and data models effortlessly.
             </p>
             <div className="flex items-center space-x-4">
               <motion.a
-                href="#"
+                href="https://github.com/bshgenerator"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg glass hover:bg-gray-100 transition-all border border-gray-200"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
@@ -57,7 +59,9 @@ const Footer = () => {
                 <Github className="w-5 h-5 text-gray-600 hover:text-gray-900 transition-colors" />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://docs.bousalih.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg glass hover:bg-gray-100 transition-all border border-gray-200"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
@@ -66,7 +70,9 @@ const Footer = () => {
                 <Book className="w-5 h-5 text-gray-600 hover:text-gray-900 transition-colors" />
               </motion.a>
               <motion.a
-                href="#"
+                href="mailto:bousalih.hamza.bsh@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg glass hover:bg-gray-100 transition-all border border-gray-200"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -85,6 +91,8 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
+                    target={link.external ? '_blank' : '_self'}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
                     className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center space-x-1"
                   >
                     <span>{link.name}</span>
@@ -103,6 +111,8 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
+                    target={link.external ? '_blank' : '_self'}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
                     className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center space-x-1"
                   >
                     <span>{link.name}</span>
@@ -121,6 +131,8 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
+                    target={link.external ? '_blank' : '_self'}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
                     className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center space-x-1"
                   >
                     <span>{link.name}</span>
