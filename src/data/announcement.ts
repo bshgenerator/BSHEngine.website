@@ -1,3 +1,5 @@
+import { vars } from "./index"
+
 export interface Announcement {
   id: string
   message: string
@@ -8,9 +10,9 @@ export interface Announcement {
 
 export const currentAnnouncement: Announcement = {
     id: '1',
-    message: 'We are glad to announce that BSH Engine is now available!',
+    message: 'We are glad to announce that BSH Engine is now available for public usage!',
     linkText: 'Learn more →',
-    linkHref: 'https://docs.bousalih.com/docs/bsh-engine',
+    linkHref: vars.bshEngineDocs,
     icon: '🎉',
   }
 

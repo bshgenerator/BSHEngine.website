@@ -1,6 +1,8 @@
 const documentation = 'https://docs.bousalih.com'
 
 export const vars = {
+    author: 'https://hamza.bousalih.com',
+    contact: 'https://hamza.bousalih.com/contact',
     email: 'bousalih.hamza.bsh@gmail.com',
     github: 'https://github.com/bshgenerator',
     dockerHub: 'https://hub.docker.com/r/bshg/engine',

@@ -33,9 +33,9 @@ export const footerLinks: FooterLinks = {
         { name: 'TypeScript SDK', href: vars.bshEngineDocs + '/sdk', external: true },
     ],
     company: [
-        { name: 'About', href: '#', external: false },
-        { name: 'Blog', href: '#', external: false },
-        { name: 'Contact', href: vars.email, external: false },
+        { name: 'About', href: vars.author, external: true },
+        { name: 'Blog', href: vars.bshEngineDocs + '/blog', external: true },
+        { name: 'Contact', href: vars.contact, external: true },
     ],
 }
 
@@ -54,7 +54,7 @@ export const socialLinks: SocialLink[] = [
     },
     {
         name: 'Contact',
-        href: 'mailto:' + vars.email,
+        href: vars.contact,
         icon: 'mail',
         ariaLabel: 'Contact',
     },
@@ -67,8 +67,7 @@ export const footerBrand = {
 }
 
 export const footerBottomLinks = {
-    privacy: { name: 'Privacy Policy', href: vars.privacyPolicy },
-    terms: { name: 'Terms of Service', href: vars.termsOfService },
+    privacy: { name: 'Privacy Policy', href: '/privacy-policy' },
+    terms: { name: 'Terms of Service', href: '/terms-of-service' },
     version: vars.version,
 }
-

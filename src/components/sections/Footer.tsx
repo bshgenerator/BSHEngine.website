@@ -116,12 +116,12 @@ const Footer = () => {
               © {currentYear} {footerBrand.name}. All rights reserved.
             </p>
             <div className="flex items-center space-x-6 text-sm text-gray-600">
-              <a href={footerBottomLinks.privacy.href} className="hover:text-gray-900 transition-colors">
+              {/* <a href={footerBottomLinks.privacy.href} className="hover:text-gray-900 transition-colors">
                 {footerBottomLinks.privacy.name}
               </a>
               <a href={footerBottomLinks.terms.href} className="hover:text-gray-900 transition-colors">
                 {footerBottomLinks.terms.name}
-              </a>
+              </a> */}
               <span className="text-gray-400">{footerBottomLinks.version}</span>
             </div>
           </div>
