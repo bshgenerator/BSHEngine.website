@@ -4,15 +4,15 @@ import {
   Key,
   Search,
   Shield,
-  FileText,
   Mail,
   Zap,
   Code2,
   Layers,
-  Lock,
   Upload,
   Webhook,
 } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 
 const Features = () => {
   const features = [
@@ -127,32 +127,46 @@ const Features = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group relative glass rounded-2xl p-6 hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:border-gray-300"
               >
-                {/* Gradient Background on Hover */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}
-                />
-                
-                {/* Icon */}
-                <div className="relative z-10 mb-4">
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.color} bg-opacity-10`}>
-                    <Icon className="w-6 h-6 text-gray-900" />
-                  </div>
-                </div>
+                <Card className={cn(
+                  "group relative glass hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:border-gray-300 overflow-hidden",
+                  "hover:shadow-lg"
+                )}>
+                  {/* Gradient Background on Hover */}
+                  <div
+                    className={cn(
+                      "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 rounded-lg transition-opacity duration-300",
+                      feature.color
+                    )}
+                  />
+                  
+                  <CardHeader>
+                    {/* Icon */}
+                    <div className="relative z-10 mb-2">
+                      <div className={cn(
+                        "inline-flex p-3 rounded-xl bg-gradient-to-br bg-opacity-10",
+                        feature.color
+                      )}>
+                        <Icon className="w-6 h-6 text-gray-900" />
+                      </div>
+                    </div>
+                    <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-gray-700 transition-all">
+                      {feature.title}
+                    </CardTitle>
+                  </CardHeader>
 
-                {/* Content */}
-                <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-all">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
+                  <CardContent>
+                    <CardDescription className="text-gray-600 leading-relaxed">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
 
-                {/* Hover Glow Effect */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 rounded-2xl blur-xl transition-opacity duration-300`} />
+                  {/* Hover Glow Effect */}
+                  <div className={cn(
+                    "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 rounded-lg blur-xl transition-opacity duration-300",
+                    feature.color
+                  )} />
+                </Card>
               </motion.div>
             )
           })}
@@ -166,15 +180,19 @@ const Features = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 text-center"
         >
-          <div className="glass rounded-2xl p-8 border border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Coming Soon</h3>
-            <div className="flex flex-wrap justify-center gap-4 text-gray-600">
-              <span className="px-4 py-2 rounded-lg bg-gray-100">Caching</span>
-              <span className="px-4 py-2 rounded-lg bg-gray-100">WebSocket Support</span>
-              <span className="px-4 py-2 rounded-lg bg-gray-100">Derived Entities</span>
-              <span className="px-4 py-2 rounded-lg bg-gray-100">Multi-database Support</span>
-            </div>
-          </div>
+          <Card className="glass border border-gray-200">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-gray-900">Coming Soon</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap justify-center gap-4 text-gray-600">
+                <span className="px-4 py-2 rounded-lg bg-gray-100">Caching</span>
+                <span className="px-4 py-2 rounded-lg bg-gray-100">WebSocket Support</span>
+                <span className="px-4 py-2 rounded-lg bg-gray-100">Derived Entities</span>
+                <span className="px-4 py-2 rounded-lg bg-gray-100">Multi-database Support</span>
+              </div>
+            </CardContent>
+          </Card>
         </motion.div>
       </div>
     </section>
