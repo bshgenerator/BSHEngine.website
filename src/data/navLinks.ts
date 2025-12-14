@@ -9,6 +9,7 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { name: 'Features', href: '#features' },
   { name: 'Quick Start', href: '#quick-start' },
+  { name: 'Releases', href: '/releases' },
   { name: 'Docs', href: vars.bshEngineDocs, external: true },
 ]
 

@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { currentAnnouncement } from '../data/announcement'
 import { navLinks, getStartedLink } from '../data/navLinks'
 
 const Navbar = () => {
+  const location = useLocation()
+  const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [hasAnnouncement, setHasAnnouncement] = useState(() => {
@@ -14,6 +17,27 @@ const Navbar = () => {
     }
     return true
   })
+
+  const handleHashLink = (href: string, e: React.MouseEvent) => {
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      if (location.pathname !== '/') {
+        navigate('/')
+        setTimeout(() => {
+          const element = document.querySelector(href)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 100)
+      } else {
+        const element = document.querySelector(href)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+      setIsMobileMenuOpen(false)
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,8 +82,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <a
-            href="/"
+          <Link
+            to="/"
             className="flex items-center space-x-2"
           >
             <div className="relative">
@@ -70,20 +94,42 @@ const Navbar = () => {
               />
             </div>
             <span className="text-xl font-bold text-gradient">BSH Engine</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target={link.external ? '_blank' : '_self'}
-                className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm relative group"
-              >
-                {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-900 to-gray-700 group-hover:w-full transition-all duration-300" />
-              </a>
+              link.external ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm relative group"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-900 to-gray-700 group-hover:w-full transition-all duration-300" />
+                </a>
+              ) : link.href.startsWith('#') ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleHashLink(link.href, e)}
+                  className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm relative group"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-900 to-gray-700 group-hover:w-full transition-all duration-300" />
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm relative group"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-900 to-gray-700 group-hover:w-full transition-all duration-300" />
+                </Link>
+              )
             ))}
             <motion.a
               href={getStartedLink}
@@ -121,14 +167,36 @@ const Navbar = () => {
           >
             <div className="px-4 py-4 space-y-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="block text-gray-600 hover:text-gray-900 transition-colors font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
+                link.external ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-600 hover:text-gray-900 transition-colors font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                ) : link.href.startsWith('#') ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => handleHashLink(link.href, e)}
+                    className="block text-gray-600 hover:text-gray-900 transition-colors font-medium"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="block text-gray-600 hover:text-gray-900 transition-colors font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <motion.a
                 href={getStartedLink}

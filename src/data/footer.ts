@@ -25,7 +25,7 @@ export const footerLinks: FooterLink[] = [
         links: [
             { name: 'Documentation', href: vars.bshEngineDocs, external: true },
             { name: 'API Reference', href: vars.bshEngineDocs + '/api', external: true },
-            { name: 'Learn from Blogs', href: vars.documentation + '/blog', external: true },
+            { name: 'Learn from Blogs', href: vars.documentation + '/blogs', external: true },
         ],
     },
     {
