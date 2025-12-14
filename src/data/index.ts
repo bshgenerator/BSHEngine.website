@@ -12,5 +12,5 @@ export const vars = {
     bshEngineDocs: documentation + '/docs/bsh-engine',
     privacyPolicy: documentation + '/privacy-policy',
     termsOfService: documentation + '/terms-of-service',
-    version: 'v0.0.1',
+    version: 'v0.0.2',
 }

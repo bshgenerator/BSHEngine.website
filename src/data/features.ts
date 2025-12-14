@@ -84,7 +84,6 @@ export const features: Feature[] = [
     color: 'from-slate-500 to-gray-600',
     iconBg: 'from-slate-50 to-gray-50',
     category: 'Security',
-    badge: 'In Development',
     link: vars.bshEngineDocs + '/security/api-keys',
   },
   {
@@ -150,7 +149,7 @@ export const features: Feature[] = [
     color: 'from-orange-500 to-red-600',
     iconBg: 'from-orange-50 to-red-50',
     category: 'Performance',
-    badge: 'Upcoming',
+    badge: 'In Development',
     link: vars.bshEngineDocs + '/caching',
   },
   {
@@ -170,7 +169,6 @@ export const features: Feature[] = [
     color: 'from-rose-500 to-pink-600',
     iconBg: 'from-rose-50 to-pink-50',
     category: 'Tools',
-    badge: 'In Development',
     link: vars.bshEngineDocs + '/sdk',
   },
   {

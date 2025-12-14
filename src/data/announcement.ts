@@ -9,10 +9,9 @@ export interface Announcement {
 }
 
 export const currentAnnouncement: Announcement = {
-    id: '1',
-    message: 'We are glad to announce that BSH Engine is now available for public usage!',
-    linkText: 'Learn more →',
-    linkHref: vars.bshEngineDocs,
-    icon: '🎉',
-  }
-
+  id: '2',
+  message: 'New release with new features and improvements!',
+  linkText: 'V0.0.2 Release →',
+  linkHref: vars.bshEngineDocs + '/changelog#002',
+  icon: '🎉',
+}
