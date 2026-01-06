@@ -11,7 +11,7 @@ export interface Announcement {
 export const currentAnnouncement: Announcement = {
   id: '2',
   message: 'New release with new features and improvements!',
-  linkText: 'V0.0.2 Release →',
-  linkHref: vars.bshEngineDocs + '/changelog#002',
+  linkText: 'V0.0.3 Release →',
+  linkHref: vars.bshEngineChangelog + '#003',
   icon: '🎉',
 }
