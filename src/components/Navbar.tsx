@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { currentAnnouncement } from '../data/announcement'
 import { navLinks, getStartedLink } from '../data/navLinks'
 
 const Navbar = () => {
-  const location = useLocation()
-  const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [hasAnnouncement, setHasAnnouncement] = useState(() => {
@@ -21,19 +18,9 @@ const Navbar = () => {
   const handleHashLink = (href: string, e: React.MouseEvent) => {
     if (href.startsWith('#')) {
       e.preventDefault()
-      if (location.pathname !== '/') {
-        navigate('/')
-        setTimeout(() => {
-          const element = document.querySelector(href)
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' })
-          }
-        }, 100)
-      } else {
-        const element = document.querySelector(href)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' })
-        }
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
       }
       setIsMobileMenuOpen(false)
     }
@@ -82,8 +69,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link
-            to="/"
+          <a
+            href="/"
             className="flex items-center space-x-2"
           >
             <div className="relative">
@@ -94,7 +81,7 @@ const Navbar = () => {
               />
             </div>
             <span className="text-xl font-bold text-gradient">BSH Engine</span>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -121,14 +108,14 @@ const Navbar = () => {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-900 to-gray-700 group-hover:w-full transition-all duration-300" />
                 </a>
               ) : (
-                <Link
+                <a
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
                   className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm relative group"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-900 to-gray-700 group-hover:w-full transition-all duration-300" />
-                </Link>
+                </a>
               )
             ))}
             <motion.a
@@ -188,14 +175,14 @@ const Navbar = () => {
                     {link.name}
                   </a>
                 ) : (
-                  <Link
+                  <a
                     key={link.name}
-                    to={link.href}
+                    href={link.href}
                     className="block text-gray-600 hover:text-gray-900 transition-colors font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 )
               ))}
               <motion.a

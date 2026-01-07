@@ -10,6 +10,7 @@ export const vars = {
     postmanCollection: 'https://www.postman.com/bsh-engine',
     documentation: documentation,
     bshEngineDocs: documentation + '/docs/bsh-engine',
+    bshEngineChangelog: documentation + '/docs/bsh-engine/changelog',
     privacyPolicy: documentation + '/privacy-policy',
     termsOfService: documentation + '/terms-of-service',
     version: 'v0.0.2',
